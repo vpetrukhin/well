@@ -9,11 +9,12 @@ const PORT = process.env.PORT || 3000;
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(express.static("public"));
+//app.use(express.static("public"));
+app.use(express.static("frontend/dist"));
 
 // Маршрут для главной страницы
 app.get("/", (_req, res) => {
-  res.sendFile(__dirname + "/public/index.html");
+  res.sendFile(__dirname + "frontend/dist/index.html");
 });
 
 // Маршрут для обработки формы
